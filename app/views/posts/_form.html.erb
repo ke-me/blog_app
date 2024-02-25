@@ -1,0 +1,35 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+ <%
+=begin%>
+ <%= form.label :title, style: "display: block" %> 
+<%
+=end%>
+    <%= form.text_field :title, class: "ttl-edit" %>
+  </div>
+
+  <div>
+    <%
+=begin%>
+ <%= form.label :content, style: "display: block" %> 
+<%
+=end%>
+    <%= form.text_area :content, class: "content-edit" %>
+  </div>
+
+  <div>
+    <%= form.submit '保存', class: 'submit'%>
+  </div>
+<% end %>

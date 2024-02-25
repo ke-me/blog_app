@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="heading1">Posts</h1>
+
+<div id="posts" class="posts-container">
+  <% @posts.each do |post| %>
+    <article class="post-wrap">
+      <%= link_to post_path(post), class: "post-link" do %>
+        <p class="post-ttl">
+          <%= post.title %>
+        </p>
+        <span class="post-date">
+          <%= post.created_at.strftime("%Y-%m-%d %H:%M") %>
+        </span>
+      <% end %>
+    </article>
+  <% end %>
+</div>
+
