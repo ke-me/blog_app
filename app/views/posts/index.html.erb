@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 class="heading1">Posts</h1>
+<% provide(:title, "ブログ一覧") %>
 
 <div id="posts" class="posts-container">
   <% @posts.each do |post| %>

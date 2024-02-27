@@ -25,12 +25,13 @@
             <%= link_to "投稿ページ", "/posts/new" %>
           </li>
           <li class="header-item">
-            <%= link_to "新規登録", signup_path %>
+            <%= link_to "新規登録", login_path %>
           </li>
         </ul>
       </nav>
     </header>
     <main class="content">
+    <h1 class="c-heading1"><%= yield(:title) %></h1>
       <%= yield %>
     </main>
   </body>

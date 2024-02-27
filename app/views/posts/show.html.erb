@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 class="heading1"><%= @post.title %></h1>
+<% provide(:title, @post.title) %>
 <p class="post-content">
   <%= @post.content %>
 </p>
