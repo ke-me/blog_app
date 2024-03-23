@@ -1,2 +1,22 @@
 <% provide(:title, "新規登録") %>
-<p>Find me in app/views/users/new.html.erb</p>
+
+ <%= form_with(model: @user, url: signup_path) do |form| %>
+
+<!--（できない）登録失敗時エラーメッセージを表示-->
+    <%= render '/shared/error_messages' %>
+
+    <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    </div>
+    <div>
+    <%= form.label :email %>
+    <!--<input id="user_email" name="user[email]" type="email" />-->
+    <%= form.email_field :email %>
+    </div>
+    <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+    </div>
+    <%= form.submit %>
+<% end %>
