@@ -20,7 +20,9 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
-      render 'new'
+      # render 'new'
+      flash[:danger] = '登録に失敗しました'
+      redirect_to action: :new
     end
   end
 

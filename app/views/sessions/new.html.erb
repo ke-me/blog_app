@@ -1,0 +1,14 @@
+<% provide(:title, "ログイン") %>
+
+<!--form_withにしたいけど分からない↓-->
+ <%= form_for(:session, url: login_path) do |form| %>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+    </div>
+    <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+    </div>
+    <%= form.submit "ログイン" %>
+<% end %>
+<div><%=link_to "新規登録はこちら", signup_path %></div>
