@@ -21,12 +21,21 @@
           <li class="header-item">
             <%= link_to "TOP", "/" %>
           </li>
-          <li class="header-item">
-            <%= link_to "投稿ページ", "/posts/new" %>
-          </li>
-          <li class="header-item">
-            <%= link_to "新規登録", signup_path %>
-          </li>
+          <% if logged_in? %>
+            <li class="header-item">
+              <%= link_to "投稿ページ", "/posts/new" %>
+            </li>
+            <li class="header-item">
+              <%= link_to "新規登録", signup_path %>
+            </li>
+            <li class="header-item">
+              <%= link_to "ログアウト", logout_path, method: :delete %>
+            </li>
+          <% else %>
+            <li class="header-item">
+              <%= link_to "ログイン", login_path %>
+            </li>
+          <% end %>
         </ul>
       </nav>
     </header>
