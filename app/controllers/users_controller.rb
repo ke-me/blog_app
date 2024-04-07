@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     if @user.save
       # flash[:notice] = "ユーザー登録が完了しました"
       # redirect_to("/users/#{@user.id}")
+      log_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else

@@ -29,6 +29,11 @@
               <%= link_to "新規登録", signup_path %>
             </li>
             <li class="header-item">
+            <%
+=begin%>
+ ログアウトボタンを押すとエラーが出る 
+<%
+=end%>
               <%= link_to "ログアウト", logout_path, method: :delete %>
             </li>
           <% else %>
